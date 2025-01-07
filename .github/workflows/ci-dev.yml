@@ -1,15 +1,18 @@
-name: Build Docker image
+name: CI on Dev
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Echo message
+        run: echo "Changes on dev detected, running Docker build"
+
       - name: Checkout Repo
         uses: actions/checkout@v3
 

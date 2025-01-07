@@ -3,13 +3,17 @@ name: PR Test
 on:
   pull_request:
     branches:
-      - main
+      - stg
+      - prod
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Echo message
+        run: echo "Running test for the Pull Request"
+
       - name: Checkout Repo
         uses: actions/checkout@v3
 
