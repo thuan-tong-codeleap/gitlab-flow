@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: 
+      packages: write
     
     steps:
       - name: Echo message
@@ -28,6 +30,7 @@ jobs:
         
       - name: Build Docker image
         uses: docker/build-push-action@v6
+
         with:
           push: true
-          tags: node-app:latest
+          tags: ghcr.io/thuan-tong-codeleap/node-app:latest
